@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ls4681yj2k4"]
+
+[ext_resource type="Script" path="res://optionsmenu.gd" id="1_qr4gn"]
+
+[node name="Pre3" type="Control"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qr4gn")
+scene = "res://morphEncounter.tscn"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -167.0
+offset_right = 109.5
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+layout_mode = 2
+text = "Oh, Gareth... what have they done to you
+
+HELP ME"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Continue" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Continue"
+
+[connection signal="pressed" from="GridContainer/Continue" to="." method="_on_button_pressed"]

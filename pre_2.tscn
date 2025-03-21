@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://57bxcn3uvcsl"]
+
+[ext_resource type="Script" path="res://optionsmenu.gd" id="1_8gvg8"]
+
+[node name="Pre2" type="Control"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8gvg8")
+scene = "res://shadowEncounter.tscn"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -167.0
+offset_right = 109.5
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer"]
+layout_mode = 2
+text = "As you proceed further you see a shadow, or maybe a person. It's like nothing
+you've seen before, resistant to taking a clear form. The voice says they're responsible
+for the trouble here.
+H.L. .e"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Continue" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Continue"
+
+[connection signal="pressed" from="GridContainer/Continue" to="." method="_on_button_pressed"]
